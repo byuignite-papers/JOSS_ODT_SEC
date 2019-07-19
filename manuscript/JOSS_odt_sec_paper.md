@@ -26,39 +26,49 @@ bibliography: JOSS_odt_sec_paper.bib
 
 # Summary
 
+The Stochastic Eddy Cascade (SEC) package is a set of models and tools used to simulate
+turbulent flow systems in which turbulence is modeled by stochastic processes that map so-called
+"eddy events" onto the domain. Most notably, SEC includes the most current implementation of the
+one-dimensional turbulence model (ODT), which has been successfully used to simulate turbulent
+reacting and nonreacting flows with high accuracy and relatively low computational cost
+`[@Lignell:2018]`. In addition to ODT, SEC also offers a flamelet model for combustion systems,
+which is useful for model validation and testing. 
+
 Turbulent flows characterize the vast majority of fluid flows in practical engineering
-applications. Simulations involving turbulent flows aid researchers in modeling existing
-phenomena and discovering new applications `[@Pope:2000]`. In particular, simulations of
-reacting turbulent flows, namely combustion, rely on accurate, yet computationally efficient
-tubulence models to attain accurate results. 
+applications, and simulations of turbulent flows provide researchers with valuable insights into
+complex systems, particularly reacting turbulent flows such as combustion processes. Turbulence
+is a complex phemonenon that occurs over the full range of the flow's length and time scales. As
+a result, resolving the entire flow field by numerically solving the Navier-Stokes equations of
+fluid flow, as is done in direct numerical simulations (DNS), requires intense computational
+resources. DNS is a powerful research tool, but its high computational cost makes this approach
+intractable for most practical engineering flows. In order to achieve solutions to practical
+flow problems, turbulence is most often modeled. For example, large-eddy simulation (LES)
+approaches directly resolve large-scale flow structures but model small-scale motion, which
+often results in accurate, computationally efficient simulation data. Unfortunately, LES
+approaches can introduce empiricism into flow simulations, and errors can be difficult to
+isolate and quantify. The one-dimensional turbulence model (ODT) functionally reverses the LES
+approach, modeling large-scale turbulent advection (which is relatively well-understood) and
+directly resolving small-scale flow structures. In previous studies, ODT has been shown capable
+of attaining accuracy comparable to DNS at a fraction of the computational cost [CITE], making it an
+attractive model for simulating turbulent flows, particularly in combustion systems. 
 
-Turbulence is characterized by the transfer of kinetic energy between flow structures,
-sometimes called eddies, of various size. This energy transfer occurs over the entire range of
-length and time scales in the flow. Theoretically, a turbulent flow can be described perfectly
-by the Navier-Stokes equations. Direct numerical simulations (DNS) resolve the full range of
-length and time scales numerically via the Navier-Stokes equations, but doing so requires
-intense computational resources, and this approach is intractable for flows with large
-Reynolds numbers. DNS is a powerful research tool, but cannot be applied to most flows in
-practical engineering situations. 
+ODT has been applied to a wide range of flows. Early applications focused on homogenous
+turbulence, wakes, and mixing layers [CITATIONS]. Later extension to variable-density flows and
+a spatial downstream coordinate system facilitated its growth and application to more complex
+flows, including jet flames [CITATIONS], fires [CITE], and particle flows [CITE]. ODT has also
+served to complement LES through subgrid modeling studies [CITE]. Most recently, the ODT code
+was extended to include cylindrical and spherical coordinate systems [CITE]. During this
+implementation, the ODT code was drastically overhauled, resulting in the SEC package presented
+here. Further detail on the current ODT model formulation and implementation can be found in the
+literature [CITE].
 
-There are numerous models that describe turbulence and turbulent flows in order to make
-practical turbulent flow problems tractable. Large-eddy simulation (LES) models do this by
-directly resolving large-scale flow structures and modelling small-scale motion. In flows that
-are dominated by large flow structures and motion, LES approaches provide simulation data that
-is accurate and computationally efficient to produce. In cases where small-scale flow
-structures are important, however, LES can introduce inaccuracies that are difficult to find
-and rectify because small-scale flow structures are extremely difficult to observe
-experimentaly. One alternative to LES is the One-dimensional turbulence model (ODT). Instead
-of preferentially resolving large-scale structures like LES does, ODT relies on models for
-large-scale turbulent advection (which is relatively well-understood) and resolves small-scale
-turbulent structures directly. In development and previous studies, ODT has been shown capable
-of attaining simulation data with accuracy comparable to DNS at a fraction of the
-computational cost, making it an attractive model for complex turbulent flows. 
-
-In this paper, we present the Stochastic Eddy Cascade (SEC) package, the current
-implementation of the one-dimensional turbulence model (ODT). 
-
-
+Ongoing research involving ODT and SEC spans multiple research groups and subject areas. ODT is
+currently being used to investigate soot formation and destruction in ethylene jet flames via
+parametric modeling studies [CITE?]. The SEC package framework is also being used to develop the
+hierarchical parcel swapping model (HiPS), which models turbulence with an economical,
+hierarchical network that represents the fluid as individual parcels capable of switching
+positions within the tree [CITE KERSTEIN PAPERS]. In the future, SEC may also be extended to
+include the linear eddy model (LEM) [CITE] and LES approaches. 
 
 # Acknowledgements
 
