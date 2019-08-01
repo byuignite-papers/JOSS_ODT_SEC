@@ -50,29 +50,35 @@ and errors can be difficult to isolate and quantify. The one-dimensional turbule
 functionally reverses the LES approach, modeling large-scale turbulent advection (which is
 relatively well-understood) and directly resolving small-scale flow structures. In previous
 studies, ODT has been shown capable of attaining accuracy comparable to DNS at a fraction of
-the computational cost `[@Lignell_2015]`, making it an attractive model for simulating
+the computational cost `[@Lignell_2015; @Abboud_2015]`, making it an attractive model for simulating
 turbulent flows, particularly in combustion systems. 
 
 ODT has been applied to a wide range of flows. Early applications focused on homogenous
-turbulence, wakes, and mixing layers `[@Kerstein_1999; @Kerstein_2001]`. Later extension to
-variable-density flows and a spatial downstream coordinate system facilitated its growth and
-application to more complex flows, including combustion in jet flames and fires
-`[@Echekki_2001; @Hewson_2001; @Hewson_2002; @Jozefik_2015; @Lignell_2015; @Lignell_2012;
-@Punati_2011]` and particle flows `[@Goshayeshi_2015; @Schmidt_2009; @Sun_2014; @Sun_2011]`.
-ODT has also served to complement LES through subgrid modeling studies `[@Cao_2008;
-@Schmidt_2003; @Schmidt_2010]`. Most recently, the ODT code was extended to include cylindrical
-and spherical coordinate systems `[@Lignell_2018]`. During this implementation, the ODT code
-was drastically overhauled, resulting in the SEC package presented here. Further detail on the
-current ODT model formulation and implementation can be found in the literature
-`[@Ashurst_2005; @Kerstein_2001; @Lignell_2013; @Lignell_2018]`.
+turbulence, wakes, and mixing layers `[@Kerstein_1999; @Kerstein_2000; @Kerstein_2001]`. Later
+extension to variable-density flows and a spatial downstream coordinate system facilitated its
+growth and application to more complex flows, including combustion in jet flames
+`[@Echekki_2001; @Hewson_2001; @Hewson_2002; @Lignell_2012; @Punati_2011; @Abdelsamie_2017;
+@Lignell_2017; @Goshayeshi_2015]`, counterflow flames  `[@Jozefik_2015]`, wall fires
+`[@Monson_2016]`, and sooting flames, `[@Lignell_2015; @Hewson_2006; @Hewson_2009;
+@Lignell_2015b, @Ricks_2010]`, as well as other particle flows `[@Sun_2017; @Schmidt_2009;
+@Sun_2014; @Fistler_2017]`.  ODT has also served to complement LES through subgrid modeling
+studies `[@Cao_2008; @Schmidt_2003; @Schmidt_2010]` and has been applied to various other flow
+configurations such as double-diffusive interfaces `[@GonzalezJuez_2011]`, Rayleigh-Taylor
+mixing `[@GonzalezJuez_2013]`, and stratified turbulence `[@Wunsch_2001]`.  Most recently, the
+ODT code was extended to include cylindrical and spherical coordinate systems `[@Lignell_2018;
+@Klein_2018; @Klein_2019]`. During this implementation, the ODT code was drastically
+overhauled, resulting in the SEC package presented here. Further detail on the current ODT
+model formulation and implementation can be found in the literature `[@Ashurst_2005;
+@Kerstein_2001; @Lignell_2013; @Lignell_2018]`.
 
 Ongoing research involving ODT and SEC spans multiple research groups and subject areas. ODT is
 currently being used to investigate soot formation and destruction in ethylene jet flames via
-parametric modeling studies `[@Hewson_2015]`. The SEC package framework is also being used to
-develop the hierarchical parcel swapping model (HiPS), which models turbulence with an
-economical, hierarchical network that represents the fluid as individual parcels capable of
-switching positions within the tree `[@Kerstein_2013; @Kerstein_2014]`. In the future, SEC may
-also be extended to include the linear eddy model (LEM) `[@Kerstein_1991]` and LES approaches. 
+parametric modeling studies `[@Hewson_2015; @Lansinger_2015b]`. The SEC package framework is
+also being used to develop the hierarchical parcel swapping model (HiPS), which models
+turbulence with an economical, hierarchical network that represents the fluid as individual
+parcels capable of switching positions within the tree `[@Kerstein_2013; @Kerstein_2014]`. In
+the future, SEC may also be extended to include the linear eddy model (LEM) `[@Kerstein_1991]`
+and LES approaches. 
 
 # Acknowledgements
 
